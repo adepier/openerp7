@@ -1,14 +1,12 @@
 FROM debian:wheezy
 MAINTAINER Albokasoft
 
-ENV DEBIAN_FRONTEND noninteractive
-
 RUN apt-get update && apt-get install -y wget nano sudo
 
-RUN wget --no-check-certificate -O - https://nightly.odoo.com/odoo.key | apt-key add -
+RUN DEBIAN_FRONTEND noninteractive wget --no-check-certificate -O - https://nightly.odoo.com/odoo.key | apt-key add -
 RUN echo "deb http://nightly.openerp.com/7.0/nightly/deb/ ./" >> /etc/apt/sources.list
 
-RUN apt-get update && apt-get install -y openerp
+RUN DEBIAN_FRONTEND noninteractive apt-get update && apt-get install -y openerp
 
 RUN apt-get clean
 
