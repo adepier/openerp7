@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y wget nano sudo
 #RUN apt-key add
 RUN echo "deb http://nightly.openerp.com/7.0/nightly/deb/ ./" >> /etc/apt/sources.list
 
-RUN apt-get update && apt-get install -y odoo
+RUN apt-get update && apt-get install -y openerp
 
 RUN apt-get clean
 
