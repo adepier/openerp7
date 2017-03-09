@@ -1,8 +1,9 @@
 FROM debian:wheezy
 MAINTAINER Albokasoft
 
-RUN wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
-echo "deb http://nightly.openerp.com/7.0/nightly/deb/ ./" >> /etc/apt/sources.list
+RUN wget -O - https://nightly.odoo.com/odoo.key 
+RUN apt-key add
+RUN echo "deb http://nightly.openerp.com/7.0/nightly/deb/ ./" >> /etc/apt/sources.list
 
 RUN apt-get update && apt-get install odoo nano sudo
 
