@@ -15,7 +15,7 @@ RUN apt-get clean
 COPY ./entrypoint.sh /
 COPY ./openerp-server.conf /etc/openerp/
 RUN chown openerp /etc/openerp/openerp-server.conf
-RUN chmod +744 /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 RUN chown openerp /entrypoint.sh
 
 # Expose Opererp services
