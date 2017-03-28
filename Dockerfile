@@ -14,3 +14,7 @@ RUN apt-get clean
 
 # Expose Opererp services
 EXPOSE 8069 8071
+
+USER openerp
+
+CMD ["/usr/bin/openerp-server", "-c", "/etc/openerp/openerp-server.conf"]
