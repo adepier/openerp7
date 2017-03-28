@@ -22,7 +22,7 @@ RUN chown openerp /entrypoint.sh
 EXPOSE 8069 8071
 
 # Set the default config file
-ENV OPENERP_SERVER /etc/odoo/openerp-server.conf
+ENV OPENERP_SERVER /etc/openerp/openerp-server.conf
 
 USER openerp
 
