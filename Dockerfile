@@ -19,7 +19,7 @@ RUN apt-get clean
 #RUN chown openerp /entrypoint.sh
 
 # Expose Opererp services
-EXPOSE 8069 8071
+EXPOSE 8069 8071 5432
 
 # Set the default config file
 #ENV OPENERP_SERVER /etc/openerp/openerp-server.conf
