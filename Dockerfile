@@ -14,7 +14,7 @@ RUN apt-get clean
 
 COPY ./entrypoint.sh /
 COPY ./openerp-server.conf /etc/openerp/
-UN chown openerp /etc/openerp/openerp-server.conf
+RUN chown openerp /etc/openerp/openerp-server.conf
 RUN chmod +x /entrypoint.sh
 RUN chown openerp /entrypoint.sh
 
