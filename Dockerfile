@@ -12,19 +12,20 @@ RUN apt-get update && apt-get install -y openerp
 
 RUN apt-get clean
 
-COPY ./entrypoint.sh /
-COPY ./openerp-server.conf /etc/openerp/
-RUN chown openerp /etc/openerp/openerp-server.conf
-RUN chmod +x /entrypoint.sh
-RUN chown openerp /entrypoint.sh
+#COPY ./entrypoint.sh /
+#COPY ./openerp-server.conf /etc/openerp/
+#RUN chown openerp /etc/openerp/openerp-server.conf
+#RUN chmod +x /entrypoint.sh
+#RUN chown openerp /entrypoint.sh
 
 # Expose Opererp services
 EXPOSE 8069 8071
 
 # Set the default config file
-ENV OPENERP_SERVER /etc/openerp/openerp-server.conf
+#ENV OPENERP_SERVER /etc/openerp/openerp-server.conf
 
 USER openerp
 
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["openerp-server"]
+#ENTRYPOINT ["/entrypoint.sh"]
+#CMD ["openerp-server"]
+CMD ["/usr/bin/openerp-server", "-c", "/etc/openerp/openerp-server.conf"]
