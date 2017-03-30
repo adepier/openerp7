@@ -18,6 +18,11 @@ RUN chown openerp /etc/openerp/openerp-server.conf
 RUN chmod +x /entrypoint.sh
 RUN chown openerp /entrypoint.sh
 
+RUN mkdir /mnt/extra-addons
+
+VOLUME [ "/mnt/extra-addons" ]
+VOLUME [ "/var/lib/openerp" ]
+
 # Expose Opererp services
 EXPOSE 8069 8071 5432
 
