@@ -1,5 +1,5 @@
-FROM debian:wheezy
-MAINTAINER Albokasoft
+FROM debian:jessie
+MAINTAINER Antoine
 
 ARG DEBIAN_FRONTEND=noninteractive
 
